@@ -2,8 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import {
-  BarChart,
-  Bar,
   PieChart,
   Pie,
   Cell,
@@ -11,7 +9,6 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
   ResponsiveContainer,
   LineChart,
   Line,
@@ -21,8 +18,6 @@ import { groceryApi, expenseApi } from '../api/groceryApi';
 import { formatCurrency, groupBySource } from '../utils/helpers';
 
 const Dashboard = () => {
-  const [items, setItems] = useState([]);
-  const [expenses, setExpenses] = useState([]);
   const [stats, setStats] = useState({
     totalItems: 0,
     totalExpense: 0,
@@ -33,6 +28,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const fetchData = async () => {
@@ -40,9 +36,6 @@ const Dashboard = () => {
       setLoading(true);
       const itemsResponse = await groceryApi.getAllItems();
       const expensesResponse = await expenseApi.getMonthlySummary();
-
-      setItems(itemsResponse.data);
-      setExpenses(expensesResponse.data);
 
       // Calculate statistics
       calculateStats(itemsResponse.data, expensesResponse.data);

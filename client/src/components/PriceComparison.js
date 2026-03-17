@@ -10,8 +10,6 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
-  ScatterChart,
-  Scatter,
 } from 'recharts';
 import { FiTrendingDown, FiAward } from 'react-icons/fi';
 import { groceryApi } from '../api/groceryApi';

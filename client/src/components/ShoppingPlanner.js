@@ -51,12 +51,10 @@ const SessionForm = ({ existing, onSaved, onCancel, knownItemNames }) => {
       : [emptyItem()]
   );
   const [saving, setSaving] = useState(false);
-  const [nameInput, setNameInput] = useState('');
   const [suggestions, setSuggestions] = useState([]);
 
   // Autocomplete suggestions
   const handleNameInput = (val, idx) => {
-    setNameInput(val);
     const filtered = knownItemNames.filter((n) =>
       n.toLowerCase().includes(val.toLowerCase())
     );

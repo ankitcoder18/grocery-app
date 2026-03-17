@@ -20,6 +20,7 @@ const GroceryList = () => {
 
   useEffect(() => {
     filterItems();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [items, searchQuery, filterSource]);
 
   const fetchItems = async () => {
