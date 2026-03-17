@@ -692,7 +692,7 @@ const ShoppingPlanner = () => {
                     <p className="text-sm text-gray-500">Completed</p>
                     <p className="text-2xl font-bold text-green-600">{sessions.filter((s) => s.status === 'completed').length}</p>
                   </div>
-                  <div className="bg-white rounded-xl p-4 border border-green-100 shadow-sm bg-green-50">
+                  <div className="rounded-xl p-4 border border-green-100 shadow-sm bg-green-50">
                     <p className="text-sm text-green-700">Last Order Total</p>
                     <p className="text-2xl font-bold text-green-700">{formatCurrency(sessions[0]?.totalBestPrice || 0)}</p>
                   </div>
