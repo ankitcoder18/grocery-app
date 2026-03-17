@@ -1,0 +1,15 @@
+{
+  "name": "grocery-app",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "build": "npm run build --workspace client"
+  },
+  "engines": {
+    "node": "20.x"
+  }
+}
